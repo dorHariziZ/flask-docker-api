@@ -25,8 +25,8 @@ Make sure you have the following installed:
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/your-github-username/flask-docker-api.git
-cd repository-name
+git clone https://github.com/dorHariziZ/flask-docker-api.git
+cd flask-docker-api
 ```
 
 ## Future Enhancements
