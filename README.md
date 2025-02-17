@@ -1,43 +1,74 @@
-# CRUD API Server with Docker
+# 🚀 CRUD API Server with Docker
 
-This repository contains a simple CRUD API server implemented using Flask (or an alternative framework). The server responds to basic API requests and logs the received data to the console. The application runs inside a Docker container.
-
-## Project Goals
-- Implement a basic CRUD API.
-- Deploy and run the application inside a Docker container.
-- Practice API development, Docker, and Git workflows.
-- Gradually expand the project with more advanced features over time.
-
-## Features
-- **CRUD Endpoints:**
-  - Create (`POST`)
-  - Read (`GET`)
-  - Update (`PUT`)
-  - Delete (`DELETE`)
-- **Logging:** Each endpoint currently prints a message to the console.
-- **Containerized Environment:** The server runs inside a Docker container.
-
-## Setup & Running
-### Prerequisites
-Make sure you have the following installed:
-- [Docker](https://docs.docker.com/get-docker/)
-- [Python 3+](https://www.python.org/downloads/) (if running locally without Docker)
-
-### Clone the Repository
-```bash
-git clone https://github.com/dorHariziZ/flask-docker-api.git
-cd flask-docker-api
-```
-
-## Future Enhancements
-This project will evolve over time with new features such as:
-- Database integration
-- Authentication & Authorization
-- Improved logging & monitoring
-- Deployment to cloud services
+This repository contains a **simple CRUD API server** built with **Flask**, running inside a **Docker container**. 
+The server provides basic **Create, Read, Update, and Delete (CRUD)** operations and logs received data.
 
 ---
-### Maintainer
-- **Your Name** (dor.harizi@zadarastorage.com)
 
+## **📌 Project Overview**
+### **Goals**
+✅ Implement a basic **CRUD API**.  
+✅ Run the API inside a **Docker container**.  
+✅ Use **Flask** for lightweight API handling.  
+✅ Enable easy deployment & scalability.  
 
+---
+
+## **📡 API Endpoints**
+| Method | Endpoint             | Description                |
+|--------|----------------------|----------------------------|
+| `POST` | `/create`            | Create a new item         |
+| `GET`  | `/read/<item_id>`     | Retrieve an item by ID    |
+| `PUT`  | `/update/<item_id>`   | Update an item by ID      |
+| `DELETE` | `/delete/<item_id>` | Delete an item by ID      |
+
+**Response:**  
+- **`200 OK`** → Request successful  
+- **`400 Bad Request`** → Data missing  
+
+---
+
+## **⚙️ Project Structure**
+```
+flask-docker-api/
+│── vendor/                # Pre-installed Python dependencies (Flask)
+│── Dockerfile             # Docker instructions to build the API container
+│── server.py              # Main Flask application (API logic)
+│── requirements.txt       # Python dependencies
+│── README.md              # Documentation
+```
+
+---
+
+## **🛠️ Setup & Running**
+### **🚀 Run Locally (Without Docker)**
+1. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. **Run the Flask server**:
+   ```bash
+   python server.py
+   ```
+3. **Test API in Postman or `curl`**:
+   ```bash
+   curl -X POST http://127.0.0.1:5000/create -H "Content-Type: application/json" -d '{"name": "item"}'
+   ```
+
+---
+
+### **🐳 Running with Docker**
+1️⃣ **Build the Docker image**:
+   ```bash
+   docker build -t flask-server-docker:1.0 .
+   ```
+
+2️⃣ **Run the container**:
+   ```bash
+   docker run -p 5001:5000 flask-server-docker:1.0
+   ```
+
+3️⃣ **Access API in Postman** at:
+   ```
+   http://127.0.0.1:5001
+   ```
