@@ -1,74 +1,37 @@
-# 🚀 CRUD API Server with Docker
+# Crypto API Apprenticeship Project  
 
-This repository contains a **simple CRUD API server** built with **Flask**, running inside a **Docker container**. 
-The server provides basic **Create, Read, Update, and Delete (CRUD)** operations and logs received data.
+This repository is an ongoing apprenticeship project where I meet with **Yuval Tamir** ([GitHub Profile](https://github.com/yuvalta)) once a week to develop and improve the project. The goal is to create an apprenticeship and training path for juniors in the company, focusing on hands-on development, best practices, and deployment strategies.  
 
----
+## **Project Overview**  
 
-## **📌 Project Overview**
-### **Goals**
-✅ Implement a basic **CRUD API**.  
-✅ Run the API inside a **Docker container**.  
-✅ Use **Flask** for lightweight API handling.  
-✅ Enable easy deployment & scalability.  
+The project is a Flask-based REST API server that provides cryptocurrency market data and CRUD functionality. It is designed to run inside a Docker container to ensure consistency across different environments.  
 
----
+The development is structured into two phases:  
 
-## **📡 API Endpoints**
-| Method | Endpoint             | Description                |
-|--------|----------------------|----------------------------|
-| `POST` | `/create`            | Create a new item         |
-| `GET`  | `/read/<item_id>`     | Retrieve an item by ID    |
-| `PUT`  | `/update/<item_id>`   | Update an item by ID      |
-| `DELETE` | `/delete/<item_id>` | Delete an item by ID      |
+### **Task 1 - `server_v1`**  
 
-**Response:**  
-- **`200 OK`** → Request successful  
-- **`400 Bad Request`** → Data missing  
+The first phase focuses on building a basic CRUD API server. The API allows users to create, read, update, and delete items, while ensuring scalability and maintainability through containerization with Docker.  
+
+#### **Key Features:**  
+- A Flask-based API server with basic CRUD operations  
+- Running the server inside a Docker container  
+- Logging received data for tracking requests  
+- Initial deployment setup  
 
 ---
 
-## **⚙️ Project Structure**
-```
-flask-docker-api/
-│── vendor/                # Pre-installed Python dependencies (Flask)
-│── Dockerfile             # Docker instructions to build the API container
-│── server.py              # Main Flask application (API logic)
-│── requirements.txt       # Python dependencies
-│── README.md              # Documentation
-```
+### **Task 2 - `server_v2`**  
 
----
+The second phase extends the functionality by integrating cryptocurrency price data retrieval and improving the development workflow with Git best practices.  
 
-## **🛠️ Setup & Running**
-### **🚀 Run Locally (Without Docker)**
-1. **Install dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-2. **Run the Flask server**:
-   ```bash
-   python server.py
-   ```
-3. **Test API in Postman or `curl`**:
-   ```bash
-   curl -X POST http://127.0.0.1:5000/create -H "Content-Type: application/json" -d '{"name": "item"}'
-   ```
+#### **Key Features:**  
+- A server that fetches cryptocurrency prices from an external API  
+- Installation of required dependencies using `requirements.txt` within Docker  
+- Addition of a `.gitignore` file for better repository management  
+- Implementation of Git commands for better version control, including:  
+  - `git rebase`  
+  - `git amend` on `origin`  
+  - `git reset`  
+  - `git revert`  
 
----
-
-### **🐳 Running with Docker**
-1️⃣ **Build the Docker image**:
-   ```bash
-   docker build -t flask-server-docker:1.0 .
-   ```
-
-2️⃣ **Run the container**:
-   ```bash
-   docker run -p 5001:5000 flask-server-docker:1.0
-   ```
-
-3️⃣ **Access API in Postman** at:
-   ```
-   http://127.0.0.1:5001
-   ```
+This project will continue to evolve as new features and improvements are introduced through weekly meetings. The goal is to refine development skills, enhance API performance, and optimize deployment strategies.

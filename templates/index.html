@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Price API</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        h1 { color: #333; }
+        pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
+        .endpoint { font-weight: bold; color: blue; }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Crypto Price API</h1>
+    <p>This API allows you to retrieve real-time cryptocurrency data using CoinGecko.</p>
+
+    <h2>Available Endpoints:</h2>
+
+    <p class="endpoint">1. Ping Server</p>
+    <pre>GET <a href="/ping">http://127.0.0.1:5003/ping</a></pre>
+
+    <p class="endpoint">2. Get Live Price of Bitcoin (default)</p>
+    <pre>GET <a href="/simple/price">http://127.0.0.1:5003/simple/price</a></pre>
+
+    <p class="endpoint">3. Get Live Price of Ethereum</p>
+    <pre>GET <a href="/simple/price?ids=ethereum&vs_currencies=usd">http://127.0.0.1:5003/simple/price?ids=ethereum&vs_currencies=usd</a></pre>
+
+    <p class="endpoint">4. Get List of Supported Coins</p>
+    <pre>GET <a href="/coins/list">http://127.0.0.1:5003/coins/list</a></pre>
+
+    <p class="endpoint">5. Get Market Data for Top 10 Coins</p>
+    <pre>GET <a href="/coins/markets?vs_currency=usd">http://127.0.0.1:5003/coins/markets?vs_currency=usd</a></pre>
+
+    <p class="endpoint">6. Get Coin Details (Bitcoin)</p>
+    <pre>GET <a href="/coins/bitcoin">http://127.0.0.1:5003/coins/bitcoin</a></pre>
+
+    <p class="endpoint">7. Get Historical Chart Data for Ethereum (Last 30 Days)</p>
+    <pre>GET <a href="/coins/ethereum/market_chart?vs_currency=usd&days=30">http://127.0.0.1:5003/coins/ethereum/market_chart?vs_currency=usd&days=30</a></pre>
+
+    <p class="endpoint">8. Get Historical Price of Bitcoin on a Specific Date</p>
+    <pre>GET <a href="/coins/bitcoin/history?date=01-01-2024">http://127.0.0.1:5003/coins/bitcoin/history?date=01-01-2024</a></pre>
+
+    <p class="endpoint">9. Get All Coin Categories</p>
+    <pre>GET <a href="/coins/categories">http://127.0.0.1:5003/coins/categories</a></pre>
+
+    <p class="endpoint">10. Get Coin Tickers (Ethereum)</p>
+    <pre>GET <a href="/coins/ethereum/tickers">http://127.0.0.1:5003/coins/ethereum/tickers</a></pre>
+
+    <h2>Usage</h2>
+    <p>Use the above endpoints in your browser or API clients like Postman or `curl`.</p>
+</body>
+</html>

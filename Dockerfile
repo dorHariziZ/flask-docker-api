@@ -2,8 +2,7 @@ FROM python:3.11-slim
 
 WORKDIR /app
 COPY . /app/
-COPY ./vendor /app/vendor
 
-ENV PYTHONPATH="/app/vendor"
+RUN pip install -r requirements.txt
 
-CMD ["python", "server.py"]
+CMD ["python", "server_v2.py"]
