@@ -4,20 +4,7 @@ VENV_DIR = venv
 PORT = 5003
 DOCKER_TAG = latest
 
-
-setup:
-	@source pip install --upgrade pip
-	@source pip install -r requirements.txt
-	@echo "Dependencies installed!"
-
-run_server_v1:
-	@echo "Starting Flask server on port $(PORT)..."
-	@source $(VENV_DIR)/bin/activate && $(PYTHON) server_v1.py
-
-run_server_v2:
-	@echo "Starting Flask server on port $(PORT)..."
-	@source $(VENV_DIR)/bin/activate && $(PYTHON) server_v2.py
-
+.PHONY: docker-build docker-stop docker-clean
 
 docker-build:
 	@echo "Building Docker image..."
@@ -26,7 +13,7 @@ docker-build:
 	docker tag $(PROJECT_NAME) $(PROJECT_NAME):$(DOCKER_TAG)
 	@echo "Docker image tagged as '$(PROJECT_NAME):$(DOCKER_TAG)'"
 	@echo "Running Docker container..."
-	docker run -p $(PORT):$(PORT) $(PROJECT_NAME)
+	docker run -d -p $(PORT):$(PORT) $(PROJECT_NAME)
 
 docker-stop:
 	@echo "Stopping all running containers..."
